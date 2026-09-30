@@ -18,6 +18,11 @@ import { emergencyContacts } from '../data/chinaGuideData';
 export const EmergencyView: React.FC = () => {
   const [copiedNumber, setCopiedNumber] = useState<string | null>(null);
 
+  const getDialNumber = (contact: string) => {
+    const base = contact.replace(/\(.*?\)/g, '');
+    return base.replace(/[^0-9+]/g, '');
+  };
+
   const handleCopy = (num: string) => {
     navigator.clipboard.writeText(num);
     setCopiedNumber(num);
@@ -74,7 +79,7 @@ export const EmergencyView: React.FC = () => {
 
                 <div className="flex items-center gap-2 my-2">
                   <a 
-                    href={`tel:${c.contact.replace(/[^0-9+]/g, '')}`}
+                    href={`tel:${getDialNumber(c.contact)}`}
                     className="text-lg font-extrabold text-sky-700 hover:text-sky-800 hover:underline tracking-tight flex items-center gap-1.5"
                   >
                     <PhoneCall className="w-4 h-4 text-sky-600" />
@@ -101,12 +106,31 @@ export const EmergencyView: React.FC = () => {
 
               <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
                 <span className="text-slate-400 text-[11px]">터치 시 즉시 전화 걸기</span>
-                <a
-                  href={`tel:${c.contact.replace(/[^0-9+]/g, '')}`}
-                  className="font-bold text-sky-600 hover:text-sky-700 flex items-center gap-0.5"
-                >
-                  통화 <ArrowRight className="w-3 h-3" />
-                </a>
+                {c.contact.includes('(4)') ? (
+                  <div className="flex items-center gap-1.5">
+                    <a
+                      href="tel:+86-138-1650-9503"
+                      className="font-bold text-sky-700 hover:text-sky-900 bg-sky-50 hover:bg-sky-100 px-2 py-0.5 rounded flex items-center gap-0.5 border border-sky-200"
+                      title="1번 당직 전화 걸기"
+                    >
+                      9503 <ArrowRight className="w-2.5 h-2.5" />
+                    </a>
+                    <a
+                      href="tel:+86-138-1650-9504"
+                      className="font-bold text-sky-700 hover:text-sky-900 bg-sky-50 hover:bg-sky-100 px-2 py-0.5 rounded flex items-center gap-0.5 border border-sky-200"
+                      title="2번 당직 전화 걸기"
+                    >
+                      9504 <ArrowRight className="w-2.5 h-2.5" />
+                    </a>
+                  </div>
+                ) : (
+                  <a
+                    href={`tel:${getDialNumber(c.contact)}`}
+                    className="font-bold text-sky-600 hover:text-sky-700 flex items-center gap-0.5"
+                  >
+                    통화 <ArrowRight className="w-3 h-3" />
+                  </a>
+                )}
               </div>
             </div>
           );

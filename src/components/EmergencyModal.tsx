@@ -50,22 +50,31 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
               주상하이 대한민국 총영사관 (24시 비상당직)
             </div>
             <div className="flex items-center justify-between mt-1">
-              <a
-                href="tel:+86-138-1650-1722"
-                className="text-xl font-black text-rose-950 hover:underline flex items-center gap-1.5"
-              >
-                <PhoneCall className="w-4 h-4 text-rose-600" />
-                +86-138-1650-1722
-              </a>
+              <div>
+                <a
+                  href="tel:+86-138-1650-9503"
+                  className="text-xl font-black text-rose-950 hover:underline flex items-center gap-1.5"
+                >
+                  <PhoneCall className="w-4 h-4 text-rose-600" />
+                  +86-138-1650-9503(4)
+                </a>
+                <div className="text-xs text-rose-700 font-semibold flex items-center gap-2 mt-0.5">
+                  <span>직통:</span>
+                  <a href="tel:+86-138-1650-9503" className="underline hover:text-rose-900">9503 연결</a>
+                  <span>|</span>
+                  <a href="tel:+86-138-1650-9504" className="underline hover:text-rose-900">9504 연결</a>
+                </div>
+              </div>
               <button
-                onClick={() => handleCopy('+86-138-1650-1722')}
-                className="p-1 text-rose-700 hover:bg-rose-100 rounded-md"
+                onClick={() => handleCopy('+86-138-1650-9503(4)')}
+                className="p-1.5 text-rose-700 hover:bg-rose-100 rounded-md"
+                title="번호 복사"
               >
-                {copiedNumber === '+86-138-1650-1722' ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+                {copiedNumber === '+86-138-1650-9503(4)' ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
               </button>
             </div>
             <p className="text-[11px] text-rose-800/80 mt-1">
-              상하이 체류 국민 사건사고 긴급 구호 전용 핫라인
+              상하이 체류 국민 사건사고 긴급 구호 전용 핫라인 (비상당직)
             </p>
           </div>
 

@@ -93,13 +93,20 @@ export default function App() {
                   주상하이 대한민국 총영사관 비상당직
                 </h4>
                 <div className="p-3 bg-rose-50/70 border border-rose-200/80 rounded-xl">
-                  <div className="text-xs font-bold text-rose-900">비상 핫라인 (24시간):</div>
+                  <div className="text-xs font-bold text-rose-900">비상당직 핫라인 (24시간):</div>
                   <a 
-                    href="tel:+86-138-1650-1722"
+                    href="tel:+86-138-1650-9503"
                     className="text-lg font-black text-rose-900 hover:underline block mt-0.5"
+                    title="1번 당직 전화 걸기"
                   >
-                    +86-138-1650-1722
+                    +86-138-1650-9503(4)
                   </a>
+                  <div className="text-[11px] text-rose-700 mt-1 flex items-center gap-2">
+                    <span>직통 연결:</span>
+                    <a href="tel:+86-138-1650-9503" className="underline font-bold hover:text-rose-900">9503</a>
+                    <span>|</span>
+                    <a href="tel:+86-138-1650-9504" className="underline font-bold hover:text-rose-900">9504</a>
+                  </div>
                   <div className="text-[11px] text-rose-700 mt-1">
                     중국 경찰 <strong>110</strong> / 구급차 <strong>120</strong> / 화재 <strong>119</strong>
                   </div>
