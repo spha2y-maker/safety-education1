@@ -57,13 +57,12 @@ export const HeroOverview: React.FC<HeroOverviewProps> = ({
         </div>
       </div>
 
-      <div className="max-w-4xl">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+      <div className="max-w-4xl space-y-2">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
           담양 중3 중국(상하이) 역사문화 탐방 인솔교사 연수
         </h2>
-        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-          상하이 임시정부 수립의 숭고한 독립운동 발자취와 글로벌 미래도시 상하이의 역동성을 배우는 중학교 3학년 탐방 프로그램입니다. 
-          출발 전부터 귀교 시까지 학생들의 안전을 최우선으로 확보하기 위한 세부 일정, 방문지별 위험요소, 중국 특화 안전 및 응급 상황 매뉴얼을 집대성하였습니다.
+        <p className="text-sm sm:text-base leading-relaxed text-slate-700">
+          본 연수 자료는 2026학년도 담양 관내 중학교 3학년 중국(상하이) 국외 현장체험학습의 안전하고 체계적인 운영을 위하여, 사전 답사 결과와 교육청·외교부 해외안전 가이드라인을 바탕으로 기안·편성한 인솔교직원 사전 직무연수 자료입니다.
         </p>
       </div>
 

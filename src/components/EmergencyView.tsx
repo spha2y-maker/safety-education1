@@ -78,18 +78,25 @@ export const EmergencyView: React.FC = () => {
                 </h4>
 
                 <div className="flex items-center gap-2 my-2">
-                  <a 
-                    href={`tel:${getDialNumber(c.contact)}`}
-                    className="text-lg font-extrabold text-sky-700 hover:text-sky-800 hover:underline tracking-tight flex items-center gap-1.5"
-                  >
-                    <PhoneCall className="w-4 h-4 text-sky-600" />
-                    {c.contact}
-                  </a>
+                  {getDialNumber(c.contact) ? (
+                    <a 
+                      href={`tel:${getDialNumber(c.contact)}`}
+                      className="text-lg font-extrabold text-sky-700 hover:text-sky-800 hover:underline tracking-tight flex items-center gap-1.5"
+                    >
+                      <PhoneCall className="w-4 h-4 text-sky-600" />
+                      {c.contact}
+                    </a>
+                  ) : (
+                    <span className="text-base font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-lg border border-amber-200/80 tracking-tight flex items-center gap-1.5">
+                      <PhoneCall className="w-4 h-4 text-amber-600" />
+                      {c.contact}
+                    </span>
+                  )}
 
                   <button
                     onClick={() => handleCopy(c.contact)}
                     className="p-1 text-slate-400 hover:text-slate-600 rounded-md hover:bg-slate-100 transition-colors"
-                    title="번호 복사"
+                    title="복사"
                   >
                     {copiedNumber === c.contact ? (
                       <Check className="w-3.5 h-3.5 text-emerald-600" />
@@ -105,7 +112,9 @@ export const EmergencyView: React.FC = () => {
               </div>
 
               <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span className="text-slate-400 text-[11px]">터치 시 즉시 전화 걸기</span>
+                <span className="text-slate-400 text-[11px]">
+                  {getDialNumber(c.contact) ? '터치 시 즉시 전화 걸기' : '현지 배정 후 업데이트'}
+                </span>
                 {c.contact.includes('(4)') ? (
                   <div className="flex items-center gap-1.5">
                     <a
@@ -123,13 +132,17 @@ export const EmergencyView: React.FC = () => {
                       9504 <ArrowRight className="w-2.5 h-2.5" />
                     </a>
                   </div>
-                ) : (
+                ) : getDialNumber(c.contact) ? (
                   <a
                     href={`tel:${getDialNumber(c.contact)}`}
                     className="font-bold text-sky-600 hover:text-sky-700 flex items-center gap-0.5"
                   >
                     통화 <ArrowRight className="w-3 h-3" />
                   </a>
+                ) : (
+                  <span className="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
+                    작성 예정
+                  </span>
                 )}
               </div>
             </div>

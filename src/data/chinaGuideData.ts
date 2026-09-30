@@ -224,11 +224,11 @@ export const emergencyContacts: EmergencyContact[] = [
     type: 'local'
   },
   {
-    role: '현지 전담 여행사 비상본부',
-    name: '전담 여행사 상황실 & 수석 가이드',
-    contact: '010-XXXX-XXXX (가이드 현지폰 등록)',
+    role: '현지 안내 연락처',
+    name: '현지 안내원(가이드) & 전담 여행사 상황실',
+    contact: '(확인 후 작성 예정)',
     hours: '24시간 현장 대기',
-    note: '전용차량 배차, 식당 변경, 긴급 현지 병원 동행 지원',
+    note: '출발 전 최종 배정 확정 후 인솔교사 및 학생 비상연락망에 기재 예정',
     type: 'agency'
   },
   {
